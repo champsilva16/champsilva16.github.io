@@ -66,7 +66,7 @@
 		
 		color: #fff;
 	}
-	/* The Modal (background) */
+	
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -81,7 +81,7 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
+
 .modal-content {
   position: relative;
   background-color: black;
@@ -96,7 +96,7 @@
   animation-duration: 0.4s
 }
 
-/* Add Animation */
+
 @-webkit-keyframes animatetop {
   from {top:-300px; opacity:0} 
   to {top:0; opacity:1}
@@ -107,7 +107,7 @@
   to {top:0; opacity:1}
 }
 
-/* The Close Button */
+
 .close {
   color: white;
   float: right;
@@ -144,10 +144,9 @@
 </style>
 <body >
 	
-	<!-- The Modal -->
+
 <div id="myModal" class="modal">
 
-	<!-- Modal content -->
 	<div class="modal-content">
 	  <div class="modal-header">
 		<span class="close">&times;</span>
@@ -204,7 +203,7 @@
 	<img id="bomb" src="bomb.png" width="70" height="60" style=" position: absolute; top:300px;left:300px;visibility: hidden;"/>
 	<img id="bomb1" src="bomb.png" width="70" height="60" style=" position: absolute; top:550px;left:550px;visibility: hidden;"/>
 	<img id="dividir" src="dividir.png" width="100" height="80" style=" position: absolute; top:50px;left:550px;visibility: hidden;"/>
-
+	<img id="veneno" src="veneno.png" width="100" height="80" style=" position: absolute; top:200px;left:550px;visibility: hidden;"/>
 	<div style="height:400px;" id="areadejogo" >
 	
 
@@ -217,7 +216,8 @@
 		
 </body>
 <script type="text/javascript">
-
+	var f=1;
+	var veneno=document.getElementById('veneno');
 	var come=document.getElementById('come');
 	var dividir=document.getElementById('dividir');
 	var vida2=0;
@@ -287,7 +287,8 @@ function myFunction()
 	
 	acerto=1;
 	console.log('acertou');
-	o=o+1;
+	if(f==1)o=o+1;
+	else o=o-1;
 	document.getElementById('certos').innerHTML=o;
 	if(o==100){
 		nvidas=0;
@@ -400,6 +401,18 @@ function myFunction()
 					o=o/2;
 					document.getElementById('certos').innerHTML=o;
 					this.remove()
+				}
+			}
+			if(o==67){
+			veneno.style.visibility= "visible";
+			setTimeout(function() {
+				veneno.style.visibility= "hidden";
+			}, 1000);
+			veneno.onclick=function(){
+				f=0;
+				setTimeout(function() {
+				f=1;
+			}, 5000);
 				}
 			}
 }
