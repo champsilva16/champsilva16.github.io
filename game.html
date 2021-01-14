@@ -415,14 +415,14 @@ function myFunction()
 			}, 5000);
 				}
 			}
-			if(o==40 && nvidas==1){
+			if(o==40 && nvidas==0){
 				extra.style.visibility= "visible";
 			setTimeout(function() {
 				extra.style.visibility= "hidden";
 			}, 1000);
 				extra.onclick=function(){
 				this.remove();
-				document.getElementById('v3').style.visibility= "visible";
+				document.getElementById('v2').style.visibility= "visible";
 				nuvidas++;
 				nvidas++;
 				}
