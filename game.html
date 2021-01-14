@@ -204,6 +204,7 @@
 	<img id="bomb1" src="bomb.png" width="70" height="60" style=" position: absolute; top:550px;left:550px;visibility: hidden;"/>
 	<img id="dividir" src="dividir.png" width="100" height="80" style=" position: absolute; top:50px;left:550px;visibility: hidden;"/>
 	<img id="veneno" src="veneno.png" width="100" height="80" style=" position: absolute; top:200px;left:550px;visibility: hidden;"/>
+	<img id="extra" src="extra.png" width="40" height="40" style=" position: absolute; top:300px;left:350px;visibility: hidden;"/>
 	<div style="height:400px;" id="areadejogo" >
 	
 
@@ -217,6 +218,7 @@
 </body>
 <script type="text/javascript">
 	var f=1;
+	var extra=document.getElementById('extra')
 	var veneno=document.getElementById('veneno');
 	var come=document.getElementById('come');
 	var dividir=document.getElementById('dividir');
@@ -383,9 +385,7 @@ function myFunction()
 				}
 				
 			}
-			
-			
-	
+
 
 	}
 		if(o==80){
@@ -413,6 +413,18 @@ function myFunction()
 				setTimeout(function() {
 				f=1;
 			}, 5000);
+				}
+			}
+			if(o==40 && nvidas==1){
+				extra.style.visibility= "visible";
+			setTimeout(function() {
+				extra.style.visibility= "hidden";
+			}, 1000);
+				extra.onclick=function(){
+				this.remove();
+				document.getElementById('v3').style.visibility= "visible";
+				nuvidas++;
+				nvidas++;
 				}
 			}
 }
