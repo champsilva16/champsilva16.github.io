@@ -1,6 +1,3 @@
-#<b>Last Corridors</b>
-Joga em:
+# <b>Last Corridors</b>
 <br>
-https://champsilva16.github.io/openfirst.html
-<br>
-
+Joga em: https://champsilva16.github.io/openfirst.html
